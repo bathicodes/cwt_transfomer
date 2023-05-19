@@ -47,8 +47,11 @@ def cwt_transform(file_path):
     plt.imshow(combined, cmap='prism', extent=[0, len(new), min(scales), max(scales)], aspect='auto')
 
     plt.axis(False)
-    plt.savefig(str(datetime.datetime.now())+".png", bbox_inches='tight', pad_inches = 0)
+
+    filename = file_path.split(".")
+
+    plt.savefig(str(filename[0])+".png", bbox_inches='tight', pad_inches = 0)
     plt.clf()
 
 # Add file path here
-cwt_transform("<--- Add file path --->")
+cwt_transform("s_quat_107784.csv")
